@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage x:Name="this"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             mc:Ignorable="d"
+             x:Class="AppleCount.FinishPopup">
+    <ContentPage.Content>
+        <Grid x:Name="FinishGrid" Width="1024" Height="768">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <BoxView BackgroundColor="Black" Opacity=".5" Grid.RowSpan="3" />
+            <Grid BackgroundColor="Blue" Opacity="1.0" Grid.Row="1" >
+                <!--<Grid.RenderTransform><TranslateTransform x:Name="FinishTranslate"/></Grid.RenderTransform>-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label Grid.ColumnSpan="4" FontSize="60" Text="Congratulations, apple-scrumper!" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button x:Name="btnPlayAgain" Grid.Row="1" Grid.Column="1" Text="Play Again"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button x:Name="btnHome" Grid.Row="1" Grid.Column="2" Text="Home" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</rg:PopupPage>
