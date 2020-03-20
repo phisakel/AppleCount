@@ -10,15 +10,17 @@
              xmlns:local="clr-namespace:AppleCount"
              x:Class="AppleCount.ApplePage">
     <Page.Resources>
-
+        <Style x:Key="LayoutRootStyle" TargetType="Grid"></Style>
+        <Style x:Key="BackButtonStyle" TargetType="Button"></Style>
+        <Style x:Key="PageHeaderTextStyle" TargetType="Label"></Style>
         <xamanimation:StoryBoard x:Key="BasketAwayStoryboard" Target="{x:Reference BasketCanvas}">
-            <xamanimation:ScaleToAnimation Scale="1" Duration="00:00:00.25"></xamanimation:ScaleToAnimation>
-            <xamanimation:ScaleToAnimation Scale="0.4" Duration="00:00:00.25"></xamanimation:ScaleToAnimation>
-            <xamanimation:ScaleToAnimation Scale="1" Duration="00:00:00.25"></xamanimation:ScaleToAnimation>
-            <xamanimation:TranslateToAnimation TranslateX="2000" Delay="5" Duration="00:00:00.7"></xamanimation:TranslateToAnimation>
+            <xamanimation:ScaleToAnimation Scale="1" Duration="250"></xamanimation:ScaleToAnimation>
+            <xamanimation:ScaleToAnimation Scale="0.4" Duration="250"></xamanimation:ScaleToAnimation>
+            <xamanimation:ScaleToAnimation Scale="1" Duration="250"></xamanimation:ScaleToAnimation>
+            <xamanimation:TranslateToAnimation TranslateX="2000" Delay="5" Duration="700"></xamanimation:TranslateToAnimation>
         </xamanimation:StoryBoard>
         <xamanimation:StoryBoard x:Key="FinishInStoryboard">
-            <xamanimation:TranslateToAnimation TranslateX="0" Delay="5" Duration="00:00:00.7"></xamanimation:TranslateToAnimation>
+            <xamanimation:TranslateToAnimation TranslateX="0" Delay="5" Duration="700"></xamanimation:TranslateToAnimation>
         </xamanimation:StoryBoard>
     </Page.Resources>
 
@@ -36,12 +38,12 @@
 
             <!--<Viewbox HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Stretch="Uniform" StretchDirection="Both">
             BoxView ?? use AbsoluteLayout instead of canvas -->
-            <AbsoluteLayout x:Name="Canvas1" Grid.Row="1" BackgroundColor="White" Width="1200" Height="640">
+            <AbsoluteLayout x:Name="Canvas1" Grid.Row="1" BackgroundColor="White" WidthRequest="1200" HeightRequest="640">
                 <Image x:Name="Tree" Grid.Row="1" AbsoluteLayout.LayoutBounds="168,24,465,594" Source="tree.png">
                 </Image>
                 <!--used ellipse here-->
-                <BoxView x:Name="TreeArea" IsVisible="False" AbsoluteLayout.LayoutBounds="185,24,421,367" BackgroundColor="White" CornerRadius="200"/>
-                <AbsoluteLayout x:Name="BasketCanvas" AbsoluteLayout.LayoutBounds="726,628, 400,400">
+                <BoxView x:Name="TreeArea" IsVisible="false" AbsoluteLayout.LayoutBounds="185,24,421,367" BackgroundColor="White" CornerRadius="200"/>
+                <AbsoluteLayout x:Name="BasketCanvas" AbsoluteLayout.LayoutBounds="26,28,400,400">
                     <Image x:Name="BasketBottom" local:ApplePage.ZIndex="0" AbsoluteLayout.LayoutBounds="726,333,311,295" Source="basket-bottom.png"/>
                     <Image x:Name="BasketTop" local:ApplePage.ZIndex="2" AbsoluteLayout.LayoutBounds="726,333,311,295" Source="basket-top.png"/>
                     <!--Rectangle used here Stroke="Black" -->

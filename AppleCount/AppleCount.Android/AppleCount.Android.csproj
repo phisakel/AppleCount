@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -93,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppleCount\AppleCount.csproj">
-      <Project>{C238A339-59AA-4B60-B3D7-C8712F9BAAC5}</Project>
+      <Project>{CE7610E1-4A9D-4FAB-AACC-F170D9E9ACED}</Project>
       <Name>AppleCount</Name>
     </ProjectReference>
   </ItemGroup>

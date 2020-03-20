@@ -14,7 +14,7 @@ namespace AppleCount
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            MainPage = new ApplePage(); // AppShell();
         }
 
         protected override void OnStart()

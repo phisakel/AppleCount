@@ -37,8 +37,10 @@ namespace AppleCount
             view.SetValue(ZIndexProperty, zindex);
         }
 
-        protected async void OnNavigatedTo(EventArgs e)
+        protected override async void OnAppearing()
         {
+            base.OnAppearing();
+        
             if (FreeApples.Count() == 0)
                 StartGameAsync().FireAndForget();
             else
@@ -171,9 +173,9 @@ namespace AppleCount
         {
             double r = 0; //current rotation
             var sb = new StoryBoard(); // double animation
-            var an = new RotateToAnimation() { Rotation = r - 30, Duration = TimeSpan.FromMilliseconds(200).ToString(), RepeatForever=true };
+            var an = new RotateToAnimation() { Rotation = r - 30, Duration = (200).ToString(), RepeatForever=true };
             sb.Animations.Add(an);
-            var an2 = new RotateToAnimation() { Rotation = r + 30, Duration = TimeSpan.FromMilliseconds(200).ToString(), RepeatForever = true };
+            var an2 = new RotateToAnimation() { Rotation = r + 30, Duration = (200).ToString(), RepeatForever = true };
             sb.Animations.Add(an2);
             sb.Target = apple;
             await sb.Begin();
@@ -183,11 +185,12 @@ namespace AppleCount
         {
             apple.IsVisible = false;
             StoryBoard sb = new StoryBoard(); //From = 4,
-            var anx = new ScaleToAnimation() {  Scale = 1, Duration = TimeSpan.FromMilliseconds(500).ToString() };
+            var anx1 = new ScaleToAnimation() { Scale = 4, Duration = (250).ToString() };
+            var anx2 = new ScaleToAnimation() {  Scale = 1, Duration = (250).ToString() };
             sb.Target = apple;
-            sb.Animations.Add(anx);
+            sb.Animations.Add(anx1); sb.Animations.Add(anx2);
             await Task.Delay(delayMs);
-            apple.IsVisible = false;
+            apple.IsVisible = true;
             await sb.PlayAsync();
         }
 
@@ -201,7 +204,7 @@ namespace AppleCount
             AbsoluteLayout.SetLayoutBounds(apple, new Rectangle(bx, by, apple.Width, apple.Height));
             SetZIndex(apple, 1);
             var sb = new StoryBoard(); //From = ax - bx, From = ay - by
-            var an = new TranslateToAnimation {  TranslateX = 0, TranslateY = 0, Duration = TimeSpan.FromMilliseconds(200).ToString() };
+            var an = new TranslateToAnimation {  TranslateX = 0, TranslateY = 0, Duration = (200).ToString() };
             sb.Target = apple;
             sb.Animations.Add(an);
             await sb.PlayAsync();
@@ -295,7 +298,7 @@ namespace AppleCount
                 SetZIndex(apple, position.Z);
             }
         }
-
+        
        
-    }
+    } // end class
 }
