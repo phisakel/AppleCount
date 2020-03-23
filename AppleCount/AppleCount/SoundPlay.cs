@@ -14,7 +14,7 @@ namespace AppleCount
             switch (sound)
             {
                 case Sounds.DropSound:
-                    file = "drop by naotuki.mp3";
+                    file = "drop_by_naotuki.mp3";
                     break;
                 case Sounds.RustleSound:
                     file = "rustle by Eliot Lash.mp3";

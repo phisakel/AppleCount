@@ -156,7 +156,7 @@
     <BundleResource Include="Resources\basket-top.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\drop by naotuki.mp3" />
+    <BundleResource Include="Resources\drop_by_naotuki.mp3" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Logo.png" />
